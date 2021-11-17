@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Shadows Simulation</title>
+        <script src="buildingshadows.js"></script>
+        <style>
+            p, span {
+                margin: 0;
+                font-size: 20px;
+            }
+            
+            button {
+                width: 80px;
+            }
+            
+            button, select {
+                font-size: 16px;
+            }
+            
+            #topButtons {
+                height: 100px;
+                position: static;
+            }
+            
+            #textContainer {
+                border: 1px solid black;
+                width: 150px;
+                background-color: lightgray;
+            }
+            
+            .modes {
+                height: 80px;
+                width: 200px;
+            }
+            
+            .box {
+                border: 1px solid black;
+                width: 120px;
+                background-color: white;
+            }
+            
+            
+            /* The slider itself */
+            .slider {
+              -webkit-appearance: none;  /* Override default CSS styles */
+              appearance: none;
+              width: 90%; /* Full-width */
+              height: 1px; /* Specified height */
+              background: #d3d3d3; /* Grey background */
+              outline: none; /* Remove outline */
+              opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
+              -webkit-transition: .2s; /* 0.2 seconds transition on hover */
+              transition: opacity .2s;
+            }
+        </style>
+    </head>
+    <body onload="init()">
+        <table>
+            <td valign="top">
+                <center>
+                    <div id="topButtons">
+                        <p>Mode</p>
+                        <button onclick="flagpoleModeHTML()">Flagpole</button>
+                        <br/>
+                        <button onclick="buildingModeHTML()">Building</button>                 
+                    </div>
+                    <br/>
+                    <center><div id="building" class="modes">
+                            <div id="textContainer"><p>Building Height:</p>
+                                <div  class="box"><span id="buildingH"></span>m</div></div>
+                            <br/>
+                        <div id="textContainer"><p>Shadow Length:</p><div  class="box"><span id="shadowL"></span>m</div></div>
+                            <br/><br/>
+                            <p><input type="radio" name="sunPos" id="2pm" value="2" checked>2pm
+                               <input type="radio" name="sunPos" id="6pm" value="6">6pm
+                                <input type="radio" name="sunPos" id="7pm" value="7">7pm</p>
+                            <select id="buildingChoice">
+                                <option value="" disabled selected>Buildings</option>
+                                <option selected="selected" value="gym">Gym</option>
+                                <option value="bank">Bank</option>
+                                <option value="restaurant">Restaurant</option>
+                                <option value="hospital">Hospital</option>
+                                <option value="apartment">Apartment Building</option>
+                            </select>
+                        </div></center>
+                    <div id="flagpole" class="modes">
+                        <div id="textContainer"><p>Shadow Length:<div  class="box"><span id="shadowL2"></span>m</div></div>
+                        <br/>
+                        <div id="flagContainer">
+                            <p>Flag Height: <span id="flagH"></span>m</p>
+                            <input type="range" min="0" max="50" value="0" class="slider" id="flagSlider">
+                        </div>
+                        <br/>
+                        <div id="sunContainer">
+                            <p>Time of Day: <span id="sunP">2</span>pm</p>
+                            <input type="range" min="2" max="7" value="2" class="slider" id="sunSlider">
+                        </div>
+                    </div>
+                </center>
+            </td>
+            <td>
+                <canvas id="canvas" style="border: 1px solid black;"></canvas>
+            </td>
+        </table>
+    </body>
+</html>
