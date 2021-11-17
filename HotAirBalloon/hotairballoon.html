@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Hot Air Balloon</title>
+        <style>
+            #upButton {
+                position: absolute;
+                margin-left: 40px;
+                margin-top: 104px;
+            }
+            #downButton {
+                position: absolute;
+                margin-left: 40px;
+                margin-top: 202px;
+            }
+            #up {
+                width: 125px;
+                height: 33px;
+                background-color: #b3b3b3;
+            }
+            #down {
+                width: 125px;
+                height: 33px;
+                background-color: #b3b3b3;
+            }
+            #up:focus {
+                width: 125px;
+                height: 33px;
+                background-color: #a6a6a6;
+            }
+            #down:focus {
+                width: 125px;
+                height: 33px;
+                background-color: #a6a6a6;
+            }
+            #tempR {
+                position: absolute;
+                margin-left: 25px;
+                margin-top: 167px;
+            }
+            #altR {
+                position: absolute;
+                margin-left: 207px;
+                margin-top: 89px;
+            }
+            #densityR {
+                position: absolute;
+                margin-left: 207px;
+                margin-top: 167px;
+            }
+            #ambienttempR {
+                position: absolute;
+                margin-left: 25px;
+                margin-top: 446px;
+            }
+            #ambientdensityR {
+                position: absolute;
+                margin-left: 207px;
+                margin-top: 446px;
+            }
+            #SimName {
+                position: absolute;
+                margin-top: 15px;
+            }
+            directions {
+                position: absolute;
+                margin-top:200px;
+            }
+        </style>
+        <script src="hotairballoon.js"></script>
+    </head>
+    <body onload="init()">
+        <table>
+            <td>
+                <div id="upButton"><button id="up" onclick="up()">Turn Flame Up</button></div>
+                <div id="downButton"><button id="down" onclick="down()">Turn Flame Down</button></div>
+                <span id="tempR"></span>
+                <span id="altR"></span>
+                <span id="densityR"></span>
+                <span id="ambienttempR"></span>
+                <span id="ambientdensityR"></span>
+                <canvas id="cv"></canvas>
+            </td>
+        </table>
+    </body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Moon Pie</title>
+        <script src="moonpie.js"></script>
+        <style>
+            canvas {
+                border: 1px solid black;
+            }
+            
+            .overlay {
+                border: 1px solid black;
+                background-color: #ccc;
+            }
+            
+            .readout {
+                border: 1px solid black;
+                width: 50px;
+                background-color: white
+            }
+            #mydiv {
+              position: absolute;
+            }
+        </style>
+    </head>
+    <body onload="init()">
+        <table>
+            <!--Left side of page-->
+            <td width="100px">
+                <center>
+                    <div class="readout">
+                        <center><span id="moonPos"></span></center>
+                    </div>
+                    <br/>
+                    <div class="overlay">
+                        <input type="checkbox" id="days">
+                        <label>Degrees</label>
+                        <div class="readout">
+                            <center><span id="daysR">0</span></center>
+                        </div>
+                    </div>
+                    <br/>
+                    <div class="overlay">
+                        <input type="checkbox" id="fraction">
+                        <label>Fraction</label>
+                        <div class="readout">
+                            <center><span id="fractionR">0</span></center>
+                        </div>
+                    </div>
+                </center>
+            </td>
+            <!--Right side of page-->
+            <td>
+                <div id="mydiv">
+                  <img src="images/moon/diagram/moon.png">
+                </div>
+                <canvas id="canvas"></canvas>
+            </td>
+        </table>
+    </body>
+</html>
